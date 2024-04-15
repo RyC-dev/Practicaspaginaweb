@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suma de Números con Reloj</title>
+<style>
+  body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; }
+  #reloj { margin: 20px; font-size: 24px; }
+  .container { margin: 10px; }
+  button { margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <input type="number" id="numero1" placeholder="Número 1">
+  <input type="number" id="numero2" placeholder="Número 2">
+  <button onclick="sumarNumeros()">Sumar</button>
+</div>
+<div class="container">
+  <p>Resultado: <span id="resultado">0</span></p>
+</div>
+<div id="reloj"></div>
+
+<script>
+function sumarNumeros() {
+  var num1 = parseFloat(document.getElementById('numero1').value);
+  var num2 = parseFloat(document.getElementById('numero2').value);
+  var suma = num1 + num2;
+  document.getElementById('resultado').textContent = suma;
+}
+
+function mostrarReloj() {
+  var fecha = new Date();
+  var horas = fecha.getHours();
+  var minutos = fecha.getMinutes();
+  var segundos = fecha.getSeconds();
+  minutos = minutos < 10 ? '0' + minutos : minutos;
+  segundos = segundos < 10 ? '0' + segundos : segundos;
+  var tiempo = horas + ":" + minutos + ":" + segundos;
+  document.getElementById('reloj').textContent = tiempo;
+}
+
+setInterval(mostrarReloj, 1000);
+</script>
+</body>
+</html>
