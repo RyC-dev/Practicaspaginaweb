@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+<<<<<<< HEAD
+    "no-inline-styles": "off",
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off",
+        "label": "off"
+      }
+    ],
+    "button-type": "off"
+=======
+    "axe/forms": "off",
+    "no-inline-styles": "off"
+>>>>>>> b501138a226de24b3478e84d07d275cc1dd7abff
+  }
+}
